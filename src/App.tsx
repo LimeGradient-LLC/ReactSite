@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom/client'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
-var page = 0;
-
 class FrontPage extends React.Component {
   render() {
     return (
@@ -16,14 +14,23 @@ class FrontPage extends React.Component {
   }
 }
 
-function App() {
-  if (page == 0) {
+class MenuBar extends React.Component {
+  render() {
     return (
-      <div className="App">
-        <FrontPage />
+      <div className='menuBar'>
+        
       </div>
-    )
+    );
   }
+}
+
+function App() {
+  return (
+    <div className="App">
+      <MenuBar />
+      <FrontPage />
+    </div>
+  )
 }
 
 export default App
