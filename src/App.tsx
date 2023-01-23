@@ -3,22 +3,26 @@ import ReactDOM from 'react-dom/client'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
-class FrontPage extends React.Component {
+var page = 0;
+
+class Page extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {page: page};
+    console.log(this.state.page);
+  }
+  
+  changePage = (pageNum: number) => () => {
+    this.setState({page: pageNum});
+    console.log(this.state.page);
+  }
+
   render() {
     return (
-      <div className='frontPage'>
+      <div className='page'>
+        <button onClick={this.changePage(0)}>Home</button>
         <h1>Kevin Burns</h1><br/>
         <h3>Coding, Youtube, and More</h3>
-      </div>
-    );
-  }
-}
-
-class MenuBar extends React.Component {
-  render() {
-    return (
-      <div className='menuBar'>
-        
       </div>
     );
   }
@@ -27,8 +31,7 @@ class MenuBar extends React.Component {
 function App() {
   return (
     <div className="App">
-      <MenuBar />
-      <FrontPage />
+      <Page />
     </div>
   )
 }
