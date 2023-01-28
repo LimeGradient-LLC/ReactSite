@@ -32,6 +32,10 @@ body {
   min-height: 100vh;
 }
 
+.logos {
+  place-items: top;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

@@ -6,7 +6,7 @@
 }
 
 .logo {
-  height: 6em;
+  height: 3em;
   padding: 1.5em;
   will-change: filter;
 }
@@ -15,6 +15,22 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.frontPage {
+  animation-name: fade-in;
+  animation-duration: 1s;
+}
+
+.codingProjects {
+  animation-name: fade-in;
+  animation-duration: 1s;
+}
+
+.divider {
+  width: 5px;
+  height: auto;
+  display: inline-block;
 }
 
 @keyframes logo-spin {
@@ -26,8 +42,17 @@
   }
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
+.logo {
     animation: logo-spin infinite 20s linear;
   }
 }
@@ -39,3 +64,4 @@
 .read-the-docs {
   color: #888;
 }
+
