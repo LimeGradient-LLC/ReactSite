@@ -4,18 +4,22 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 
 var page = 0;
+var update: any = 0;
 
-class FrontPage extends React.Component {
-  constructor(props) {
+class FrontPage extends React.Component<{}, {update: number}> {
+  constructor(props: any) {
     super(props);
     this.state = {update: 0}
   }
 
   componentDidMount(): void {
-      this.state.update = setInterval(
+      update = setInterval(
         () => this.tick(),
         10
       );
+      this.setState({
+        update: update
+      });
   }
 
   componentWillUnmount(): void {
@@ -24,7 +28,7 @@ class FrontPage extends React.Component {
 
   tick() {
     this.setState({
-      update: new Date()
+      update: 0
     });
   }
 
@@ -69,7 +73,7 @@ class FrontPage extends React.Component {
             <br />
             There is still a video of my first game I made out on Youtube.
             <br />
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/5Q_WswfeAZA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/5Q_WswfeAZA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
             <br />
             It was not good but it was the start that led to where I am now, 5
             years later
