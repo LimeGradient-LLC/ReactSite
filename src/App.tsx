@@ -4,7 +4,6 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 import CodingProjects from './pages/projects';
 import CodingKnowledge from './pages/knowledge';
-import Emulator from './pages/emulator';
 
 var page = 0;
 var update: any = 0;
@@ -68,11 +67,6 @@ class FrontPage extends React.Component<{}, {update: number}> {
         <CodingProjects />
       );
     }
-    if (page == 3) {
-      return (
-        <Emulator />
-      );
-    }
   }
 }
 
@@ -85,8 +79,6 @@ class MenuBar extends React.Component {
         <button onClick={function() { page = 1; console.log(page);}}>Coding</button>
         <div className='divider' />
         <button onClick={function() { page = 2; console.log(page); }}>Projects</button>
-        <div className='divider' />
-        <button onClick={function() { page = 3; console.log(page);}}>Emulator</button>
       </div>
     );
   }
