@@ -79,9 +79,11 @@ class MenuBar extends React.Component {
         <Link to="/">
           <button>Home</button>
         </Link>
+        <div className='divider' />
         <Link to="/coding">
           <button>Coding Knowledge</button>
         </Link>
+        <div className='divider' />
         <Link to="/projects">
           <button>Coding Projects</button>
         </Link>
