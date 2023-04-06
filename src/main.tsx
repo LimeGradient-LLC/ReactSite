@@ -1,10 +1,16 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
+import App from './App'
+import { FrontPage } from './App';
+
+import './index.css'
+import CodingKnowledge from './pages/knowledge';
+
+ReactDOM.render((
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>  
+  ),document.getElementById('root')
 )

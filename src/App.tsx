@@ -4,6 +4,8 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 import CodingProjects from './pages/projects';
 import CodingKnowledge from './pages/knowledge';
+import { Link } from 'react-router-dom';
+import Main from './mainfunc';
 
 var page = 0;
 var update: any = 0;
@@ -74,11 +76,15 @@ class MenuBar extends React.Component {
   render() {
     return (
       <div className='menuBar'>
-        <button onClick={function() { page = 0; console.log(page);}}>Home</button>
-        <div className='divider' />
-        <button onClick={function() { page = 1; console.log(page);}}>Coding</button>
-        <div className='divider' />
-        <button onClick={function() { page = 2; console.log(page); }}>Projects</button>
+        <Link to="/">
+          <button>Home</button>
+        </Link>
+        <Link to="/coding">
+          <button>Coding Knowledge</button>
+        </Link>
+        <Link to="/projects">
+          <button>Coding Projects</button>
+        </Link>
       </div>
     );
   }
@@ -88,9 +94,10 @@ function App() {
   return (
     <div className="App">
       <MenuBar />
-      <FrontPage />
+      <Main />
     </div>
   )
 }
 
 export default App
+export {FrontPage}
