@@ -87,6 +87,9 @@ class MenuBar extends React.Component {
         <Link to="/projects">
           <button>Coding Projects</button>
         </Link>
+        <Link to="/devlog">
+          <button>Devlog</button>
+        </Link>
       </div>
     );
   }
