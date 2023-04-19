@@ -18,8 +18,20 @@
                 document.querySelector("desmond-player").shadowRoot.querySelector("#bottom").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 70%;height: 40%;";
             }, 1000)
         }
+        function loadEmulatorFromGithubCDN(name) {
+            setTimeout(function() {
+                document.querySelector("desmond-player").loadURL(`https://nameless-tundra-82591.herokuapp.com/https://raw.githubusercontent.com/LimeGradient-LLC/cdn/main/uploads/${name}.nds?token=AU4NTFFA25ZWYDLIVZF54KLEIA6LE`);
+                document.querySelector("desmond-player").shadowRoot.querySelector("#top").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 30%;height: 40%;";
+
+                document.querySelector("desmond-player").shadowRoot.querySelector("#bottom").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 70%;height: 40%;";
+            }, 1000)
+        }
         function getName() {
             var e = document.getElementById('romFile');
+            return e.value;
+        }
+        function getNameFromGithubCDN() {
+            var e = document.getElementById('romFileGithubCDN');
             return e.value;
         }
     </script>
@@ -39,6 +51,16 @@
         <option value="wildworld">Animal Crossing: Wild World</option>
     </select>
     <button onclick="loadEmulator(getName())">Load Game</button>
+
+    <br>
+    <label for="romFileGithubCDN">Games 2:</label>
+    <select name="romFileGithubCDN" id="romFileGithubCDN">
+        <option value="codmw">Call of Duty: Modern Warfare</option>
+        <option value="codmw2">Call of Duty: Modern Warfare 2</option>
+        <option value="codmw3">Call of Duty: Modern Warfare 3</option>
+    </select>
+    <button onclick="loadEmulatorFromGithubCDN(getNameFromGithubCDN())">Load Game from Game 2</button>
+
     <br>
     <p>Controls: Arrow Keys - DPAD | Z - A | X - B | S - X | A - Y</p>
 
