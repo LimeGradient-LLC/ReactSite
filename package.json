@@ -1,24 +1,14 @@
 {
-  "name": "reactsite",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node index.js"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LimeGradient-LLC/ReactSite.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/LimeGradient-LLC/ReactSite/issues"
-  },
-  "homepage": "https://github.com/LimeGradient-LLC/ReactSite#readme",
-  "dependencies": {
-    "express": "^4.18.2"
+  "devDependencies": {
+    "vite": "^4.2.0"
   }
 }
