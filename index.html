@@ -8,11 +8,11 @@
 </head>
 <body>
     <desmond-player id="player"></desmond-player>
-    <script src="https://cdn.jsdelivr.net/gh/Unzor/desmond/cdn/desmond.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Unzor/desmond/cdn/desmond.min.js"></script>    
     <script>
         function loadEmulator(name) {
             setTimeout(function() {
-                document.querySelector("desmond-player").loadURL(`https://api.codetabs.com/v1/proxy?quest=https://tank-version-manager.herokuapp.com/${name}.nds`);
+                document.querySelector("desmond-player").loadURL(`https://nameless-tundra-82591.herokuapp.com/https://tank-version-manager.herokuapp.com/${name}.nds`);
                 document.querySelector("desmond-player").shadowRoot.querySelector("#top").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 30%;height: 40%;";
 
                 document.querySelector("desmond-player").shadowRoot.querySelector("#bottom").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 70%;height: 40%;";
@@ -30,6 +30,8 @@
     <option value="nsmb">New Super Mario Bros</option>
     </select>
     <button onclick="loadEmulator(getName())">Load Game</button>
+    <br>
+    <p>Controls: Arrow Keys - DPAD | Z - A | X - B | S - X | A - Y</p>
 
 </body>
 </html>
