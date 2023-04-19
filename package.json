@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/LimeGradient-LLC/ReactSite/issues"
   },
-  "homepage": "https://github.com/LimeGradient-LLC/ReactSite#readme"
+  "homepage": "https://github.com/LimeGradient-LLC/ReactSite#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
