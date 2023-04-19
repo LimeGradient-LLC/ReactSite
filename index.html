@@ -12,7 +12,7 @@
     <script>
         function loadEmulator(name) {
             setTimeout(function() {
-                document.querySelector("desmond-player").loadURL(`https://raw.githubusercontent.com/LimeGradient-LLC/cdn/main/uploads/${name}.nds?token=AU4NTFDOKLH6OOQQBJJFBRLEH5WD2`);
+                document.querySelector("desmond-player").loadURL(`http://tank-version-manager.herokuapp.com/${name}.nds`);
                 document.querySelector("desmond-player").shadowRoot.querySelector("#top").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 30%;height: 40%;";
 
                 document.querySelector("desmond-player").shadowRoot.querySelector("#bottom").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 70%;height: 40%;";
