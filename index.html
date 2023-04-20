@@ -19,7 +19,15 @@
                     document.querySelector("desmond-player").shadowRoot.querySelector("#top").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 30%;height: 40%;";
 
                     document.querySelector("desmond-player").shadowRoot.querySelector("#bottom").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 70%;height: 40%;";
-                } else {
+                } else if (name.includes("_storage4", '')) {
+                    name = name.replace('_storage4', '');
+                    document.querySelector("desmond-player").loadURL(`https://nameless-tundra-82591.herokuapp.com/https://storage4.herokuapp.com/${name}.nds`);
+                    document.querySelector("desmond-player").enableMicrophone();
+                    document.querySelector("desmond-player").shadowRoot.querySelector("#top").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 30%;height: 40%;";
+
+                    document.querySelector("desmond-player").shadowRoot.querySelector("#bottom").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 70%;height: 40%;";
+                } 
+                else {
                     document.querySelector("desmond-player").loadURL(`https://nameless-tundra-82591.herokuapp.com/https://tank-version-manager.herokuapp.com/${name}.nds`);
                     document.querySelector("desmond-player").enableMicrophone();
                     document.querySelector("desmond-player").shadowRoot.querySelector("#top").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 30%;height: 40%;";
@@ -40,10 +48,13 @@
         <option value="wildworld">Animal Crossing: Wild World</option>
         <option value="blackops">Call of Duty: Black Ops</option>
         <option value="cookingmama">Cooking Mama</option>
+        <option value="harvestmoon_storage4">Harvest Moon - Takes 1 Minute to load</option>
         <option value="legomarvel">Lego Marvel Superheroes: Universe in Peril</option>
         <option value="legoharrypotter1-4_storage3">Lego Harry Potter: Years 1-4</option>
         <option value="legoharrypotter5-7_storage3">Lego Harry Potter: Years 5-7</option>
         <option value="legopirates_storage3">Lego Pirates of the Carribean</option>
+        <option value="legobatman2_storage4">Lego Batman 2: DC Super Heroes</option>
+        <option value="legostarwars3_storage4">Lego Star Wars 3: The Clone Wars</option>
         <option value="nsmb">New Super Mario Bros</option>
         <option value="namco_storage3">Mario and Luigi: Bowsers Inside Story</option>
         <option value="mariokartds_storage3">Mario Kart DS</option>
@@ -60,6 +71,8 @@
 
     <br>
     <p>Controls: Arrow Keys - DPAD | Z - A | X - B | S - X | A - Y</p>
+    <br>
+    <p>Some games might take a minute to load</p>
 
 </body>
 </html>
