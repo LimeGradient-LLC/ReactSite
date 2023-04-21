@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>NES Emulator</title>
+		
+		<script type="text/javascript" src="https://unpkg.com/jsnes/dist/jsnes.min.js"></script>
+		<script type="text/javascript" src="nes-embed.js"></script>
+		<script>
+            function loadEmulatorDOS(name) {
+                var ifr = document.createElement('iframe');
+                ifr.setAttribute("src", `jsdos/${name}/_site/index.html`);
+                ifr.style.width = "1280px";
+                ifr.style.height = "720px";
+                document.body.appendChild(ifr);
+            }
+            function getNameDOS() {
+                var e = document.getElementById('dosFile');
+                return e.value;
+            }
+        </script>
+	</head>
+	<body>
+        <a href="index.html">Homepage</a> <br>
+        <label for="dosFile">Games:</label>
+        <select name="dosFile" id="dosFile">
+            <option value="cac">Command and Conquer</option>
+            <option value="doom">DOOM</option>
+            <option value="doom2">DOOM 2</option>
+            <option value="ultimatedoom">The Ultimate Doom</option>
+            <option value="dn3d">Duke Nukem 3D</option>
+            <option value="kombat">Mortal Kombat</option>
+            <option value="oregontrail">Oregon Trail Deluxe</option>
+            <option value="simcity">Sim City</option>
+            <option value="simcity2000">Sim City 2000</option>
+            <option value="wolfenstein">Wolfenstein 3D</option>
+        </select>
+        <button onclick="loadEmulatorDOS(getNameDOS())">Load Game</button>
+	</body>
+</html>
