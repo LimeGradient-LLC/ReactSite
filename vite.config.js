@@ -7,6 +7,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         nes: resolve(__dirname, 'nes.html'),
+        nes_embed: resolve(__dirname, 'nes-embed.js'),
         dos: resolve(__dirname, 'dos.html'),
         cac: resolve(__dirname, 'jsdos/cac/_site/index.html'),
         dn3d: resolve(__dirname, 'jsdos/dn3d/_site/index.html'),
