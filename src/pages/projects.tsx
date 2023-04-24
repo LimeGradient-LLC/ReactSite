@@ -13,6 +13,9 @@ export default class CodingProjects extends React.Component {
                   You can find the Github Repo here.
                 </a>
               </p>
+              <h1>MC-JSON-Gen - 4/24/2023</h1>
+              <br />
+              <p>MC-JSON-Gen is a quick program I made in 10 minutes to streamline the Minecraft title command. It is hosted <a href="https://limegradient.github.io/mc-json-gen/index.html">here</a></p>
             </div>
           );
     }
