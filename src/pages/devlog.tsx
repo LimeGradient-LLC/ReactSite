@@ -4,9 +4,9 @@ export default class Devlog extends React.Component {
     render() {
         return (
             <div className="devlog">
-                <h1>TerrariaMC</h1>
+                <h1>MC-JSON-Gen - 4/24/2023</h1>
                 <br />
-                <p>TerrariaMC is a project me and some friends are working on to bring Terraria content into Minecraft</p>
+                <p>MC-JSON-Gen is a quick program I made in 10 minutes to streamline the Minecraft title command. It is hosted <a href="https://limegradient.github.io/mc-json-gen/index.html">here</a></p>
             </div>
         );
     }
