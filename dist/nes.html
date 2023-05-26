@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>NES Emulator</title>
+		
+		<script type="text/javascript" src="https://unpkg.com/jsnes/dist/jsnes.min.js"></script>
+		<script type="text/javascript" src="https://storage4.herokuapp.com/nes-embed.js"></script>
+		<script>
+            function loadEmulatorNES(name) {
+                nes_load_url("nes-canvas", `https://nameless-tundra-82591.herokuapp.com/https://storage4.herokuapp.com/${name}.nes`);
+            }
+            function getNameNES() {
+                var e = document.getElementById('nesFile');
+                return e.value;
+            }
+        </script>
+	</head>
+	<body>
+        <a href="index.html">Homepage</a> <br>
+        <p>DPad: Arrow keys<br/>Start: Return/Pause, Select: Tab<br/>A Button: A, B Button: S </p>
+
+        <label for="nesFile">Games:</label>
+        <select name="nesFile" id="nesFile">
+            <option value="castlevania">Castlevania</option>
+            <option value="castlevania2">Castlevania 2</option>
+            <option value="dkclassics">Donkey Kong Classics</option>
+            <option value="drmario">Dr Mario</option>
+            <option value="excitebike">Excitebike</option>
+            <option value="legendofzelda">The Legend of Zelda</option>
+            <option value="zelda2">The Legend of Zelda 2</option>
+            <option value="megaman">Mega Man</option>
+            <option value="megaman2">Mega Man 2</option>
+            <option value="megaman3">Mega Man 3</option>
+            <option value="megaman4">Mega Man 4</option>
+            <option value="megaman5">Mega Man 5</option>
+            <option value="metroid">Metroid</option>
+            <option value="mktrilogy">Mortal Kombat Trilogy</option>
+            <option value="punchout">Mike Tyson's Punch Out</option>
+            <option value="smb">Super Mario Bros</option>
+            <option value="smb2">Super Mario Bros 2</option>
+            <option value="smb3">Super Mario Bros 3</option>
+        </select>
+        <button onclick="loadEmulatorNES(getNameNES())">Load Game</button>
+	    <div style="margin: auto; width: 75%;">
+		<canvas id="nes-canvas" width="256" height="240" style="width: 100%"/>
+		</div>
+	</body>
+</html>

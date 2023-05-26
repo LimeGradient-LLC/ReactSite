@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emulator</title>
+</head>
+<body>
+    <desmond-player id="player"></desmond-player>
+    <script src="https://cdn.jsdelivr.net/gh/Unzor/desmond/cdn/desmond.min.js"></script>    
+    <script>
+        function loadEmulator(name) {
+            setTimeout(function() {
+                if (name.includes("_storage3")) {
+                    name = name.replace('_storage3', '');
+                    document.querySelector("desmond-player").loadURL(`https://nameless-tundra-82591.herokuapp.com/https://storage-3.herokuapp.com/${name}.nds`);
+                    document.querySelector("desmond-player").enableMicrophone();
+                    document.querySelector("desmond-player").shadowRoot.querySelector("#top").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 30%;height: 40%;";
+
+                    document.querySelector("desmond-player").shadowRoot.querySelector("#bottom").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 70%;height: 40%;";
+                } else if (name.includes("_storage4", '')) {
+                    name = name.replace('_storage4', '');
+                    document.querySelector("desmond-player").loadURL(`https://nameless-tundra-82591.herokuapp.com/https://storage4.herokuapp.com/${name}.nds`);
+                    document.querySelector("desmond-player").enableMicrophone();
+                    document.querySelector("desmond-player").shadowRoot.querySelector("#top").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 30%;height: 40%;";
+
+                    document.querySelector("desmond-player").shadowRoot.querySelector("#bottom").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 70%;height: 40%;";
+                } 
+                else {
+                    document.querySelector("desmond-player").loadURL(`https://nameless-tundra-82591.herokuapp.com/https://tank-version-manager.herokuapp.com/${name}.nds`);
+                    document.querySelector("desmond-player").enableMicrophone();
+                    document.querySelector("desmond-player").shadowRoot.querySelector("#top").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 30%;height: 40%;";
+
+                    document.querySelector("desmond-player").shadowRoot.querySelector("#bottom").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 70%;height: 40%;";
+                }
+            }, 1000)
+        }
+        function getName() {
+            var e = document.getElementById('romFile');
+            return e.value;
+        }
+    </script>
+    <br>
+
+    <a href="nes.html">Goto NES Emulator</a> <br>
+    <a href="dos.html">Goto DOS Emulator</a> <br>
+
+    <label for="romFile">Games:</label>
+    <select name="romFile" id="romFile">
+        <option value="wildworld">Animal Crossing: Wild World</option>
+        <option value="blackops">Call of Duty: Black Ops</option>
+        <option value="cookingmama">Cooking Mama</option>
+        <option value="harvestmoon_storage4">Harvest Moon - Takes 1 Minute to load</option>
+        <option value="legomarvel">Lego Marvel Superheroes: Universe in Peril</option>
+        <option value="legoharrypotter1-4_storage3">Lego Harry Potter: Years 1-4</option>
+        <option value="legoharrypotter5-7_storage3">Lego Harry Potter: Years 5-7</option>
+        <option value="legopirates_storage3">Lego Pirates of the Carribean</option>
+        <option value="legobatman2_storage4">Lego Batman 2: DC Super Heroes</option>
+        <option value="legostarwars3_storage4">Lego Star Wars 3: The Clone Wars</option>
+        <option value="nsmb">New Super Mario Bros</option>
+        <option value="namco_storage3">Mario and Luigi: Bowsers Inside Story</option>
+        <option value="mariokartds_storage3">Mario Kart DS</option>
+        <option value="nintendogs">Nintendogs</option>
+        <option value="namco_storage3">Namco Museum</option>
+        <option value="phantomhourglass">The Legend of Zelda - The Phantom Hourglass</option>
+        <option value="diamond">Pokemon Diamond Edition</option>
+        <option value="white">Pokemon White Edition</option>
+        <option value="soulsilver">Pokemon SoulSilver Edition</option>
+        <option value="sm64ds_storage3">Super Mario 64 DS</option>
+        <option value="yoshiisland_storage3">Yoshi's Island</option>
+    </select>
+    <button onclick="loadEmulator(getName())">Load Game</button>
+
+    <br>
+    <p>Controls: Arrow Keys - DPAD | Z - A | X - B | S - X | A - Y</p>
+    <br>
+    <p>Some games might take a minute to load</p>
+
+</body>
+</html>
