@@ -9,7 +9,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         gb: resolve(__dirname, "gb.html"),
-        n64: resolve(__dirname, "N64Wasm/dist/n64.html")
+        n64: resolve(__dirname, "N64Wasm/dist/index.html")
       },
     },
   },
