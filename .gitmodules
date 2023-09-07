@@ -1,0 +1,3 @@
+[submodule "N64Wasm"]
+path = N64Wasm
+url = "https://github.com/nbarkhina/N64Wasm"
