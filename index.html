@@ -9,7 +9,8 @@
 <body>
     <h1 id="downloadNotif"></h1>
     <a href="gb.html">Go to Gameboy Emulator</a> <br>
-    <a href="N64Wasm/dist/index.html">Go to N64 Emulator</a>
+    <a href="N64Wasm/dist/index.html">Go to N64 Emulator</a> <br>
+    <a href="gba.html">Go to Gameboy Advance Emulator</a>
     <br>
     <br>
     <desmond-player id="player"></desmond-player>
@@ -46,6 +47,8 @@
         <option value="wildworld">Animal Crossing: Wild World</option>
     </select>
     <button onclick="loadEmulator(getName())">Load Game</button>
+
+    <button onclick="loadEmulatorGBA('pokemonblack')">Test</button>
 
     <br>
     <p>Controls: Arrow Keys - DPAD | Z - A | X - B | S - X | A - Y</p>
