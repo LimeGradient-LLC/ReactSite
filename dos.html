@@ -1,0 +1,23 @@
+<head>
+    <title>DOS Games</title>
+    <script>
+        function loadEmulator(name) {
+            window.location.href = `dos/${name}/_site/index.html`;
+        }
+        function getName() {
+            var e = document.getElementById('game');
+            return e.value;
+        }
+    </script>
+</head>
+<body>
+    <label for="game">Games:</label>
+    <select id="game">
+        <option value="doom">Doom</option>
+        <option value="doom2">Doom 2</option>
+        <option value="monkeyisland">The Legend of Monkey Island</option>
+        <option value="oregontrail">The Oregon Trail</option>
+        <option value="simcity">Sim City</option>
+        <option value="wolfenstein">Wolfenstein</option>
+    </select>
+</body>
