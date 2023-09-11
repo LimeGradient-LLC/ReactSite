@@ -97,7 +97,7 @@ window.onload = function () {
 }
 
 function downloadBIOS() {
-    downloadFile("emulator.limegradient.xyz/gba/games/gba_bios.bin", registerBIOS);
+    downloadFile("../../gba/games/gba_bios.bin", registerBIOS);
 }
 
 function registerBIOS() {
@@ -108,7 +108,7 @@ function registerBIOS() {
 
 function downloadROM(gamename) {
     writeRedTemporaryText("Downloading \"" + gamename + ".\"");
-    downloadFile("emulator.limegradient.xyz/gba/games/" + gamename + ".gba", registerROM);
+    downloadFile("../../gba/games/" + gamename + ".gba", registerROM);
 }
 
 function registerROM() {
