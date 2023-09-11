@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emulator</title>
+</head>
+<body>
+    <h1 id="downloadNotif"></h1>
+    <a href="index.html">Go Back</a>
+    <br>
+    <br>
+    <desmond-player id="player"></desmond-player>
+    <script src="https://cdn.jsdelivr.net/gh/Unzor/desmond/cdn/desmond.min.js"></script>    
+    <script>
+        function loadEmulator(name) {
+            setTimeout(function() {
+                document.querySelector("desmond-player").loadURL(`https://starlit-biscotti-dde833.netlify.app/game/nds/${name}.nds`);
+                    document.querySelector("desmond-player").enableMicrophone();
+                    document.querySelector("desmond-player").shadowRoot.querySelector("#top").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 30%;height: 40%;";
+
+                    document.querySelector("desmond-player").shadowRoot.querySelector("#bottom").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 70%;height: 40%;";
+            }, 500)
+            document.title = `Emulator - Playing ${getName()}`
+        }
+        function getName() {
+            var e = document.getElementById('romFile');
+            return e.value;
+        }
+    </script>
+    <br>
+
+    <label for="romFile">Games:</label>
+    <select name="romFile" id="romFile">
+        <option value="codblackops">Call of Duty: Black Ops</option>
+        <option value="legostarwarstcs">Lego Star Wars: The Complete Saga</option>
+        <option value="mariokartds">Mario Kart DS</option>
+        <option value="mariopartyds">Mario Party DS</option>
+        <option value="nsmb">New Super Mario Bros</option>
+        <option value="phantomhourglass">The Legend of Zelda: The Phantom Hourglass</option>
+        <option value="pokediamond">Pokemon: Diamond</option>
+        <option value="pokepearl">Pokemon: Pearl</option>
+        <option value="sm64">Super Mario 64 DS</option>
+        <option value="wildworld">Animal Crossing: Wild World</option>
+    </select>
+    <button onclick="loadEmulator(getName())">Load Game</button>
+
+    <button onclick="loadEmulatorGBA('pokemonblack')">Test</button>
+
+    <br>
+    <p>Controls: Arrow Keys - DPAD | Z - A | X - B | S - X | A - Y</p>
+    <br>
+    <p>Some games might take a minute to load</p>
+
+</body>
+</html>

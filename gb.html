@@ -3,10 +3,10 @@
         function loadEmulator(name) {
             setTimeout(function() {
                 if (document.getElementById("romFile").options[document.getElementById("romFile").selectedIndex].id == "gbc") {
-                    document.getElementById("player").src = `https://wasmboy.app/iframe/?rom-url=https://starlit-biscotti-dde833.netlify.app/game/gb/${name}.gbc`
+                    document.getElementById("player").src = `https://wasmboy.app/iframe/?rom-url=emulator.limegradient.xyz/gb/${name}.gbc`
                 }
                 else {
-                    document.getElementById("player").src = `https://wasmboy.app/iframe/?rom-url=https://starlit-biscotti-dde833.netlify.app/game/gb/${name}.gb`
+                    document.getElementById("player").src = `https://wasmboy.app/iframe/?rom-url=emulator.limegradient.xyz/gb/${name}.gb`
                 }
             }, 500)
             document.title = `Emulator - Playing ${getName()}`
@@ -19,7 +19,7 @@
     <title>Emulator - GB</title>
 </head>
 <body>
-    <a href="index.html">Go to Nintendo DS Emulator</a>
+    <a href="index.html">Go Back</a>
     <br>
     <br>
     <iframe id="player" title="WasmBoy Iframe Embed" width="640" height="576" allowfullscreen="true"> </iframe>
