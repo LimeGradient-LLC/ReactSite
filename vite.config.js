@@ -10,7 +10,8 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         gb: resolve(__dirname, "gb.html"),
         n64: resolve(__dirname, "N64Wasm/dist/index.html"),
-        gba: resolve(__dirname, "gba.html")
+        gba: resolve(__dirname, "gba.html"),
+        nds: resolve(__dirname, "ds.html")
       },
     },
   },
