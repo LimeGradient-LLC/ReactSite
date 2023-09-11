@@ -3,10 +3,10 @@
         function loadEmulator(name) {
             setTimeout(function() {
                 if (document.getElementById("romFile").options[document.getElementById("romFile").selectedIndex].id == "gbc") {
-                    document.getElementById("player").src = `https://wasmboy.app/iframe/?rom-url=emulator.limegradient.xyz/gb/${name}.gbc`
+                    document.getElementById("player").src = `https://wasmboy.app/iframe/?rom-url=https://emulator.limegradient.xyz/gb/${name}.gbc`
                 }
                 else {
-                    document.getElementById("player").src = `https://wasmboy.app/iframe/?rom-url=emulator.limegradient.xyz/gb/${name}.gb`
+                    document.getElementById("player").src = `https://wasmboy.app/iframe/?rom-url=https://emulator.limegradient.xyz/gb/${name}.gb`
                 }
             }, 500)
             document.title = `Emulator - Playing ${getName()}`
