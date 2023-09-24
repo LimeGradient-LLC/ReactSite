@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
+    
+    <style> 
+      body {
+        background-color: rgb(154, 154, 154);
+      }
+
+      .song-button {
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+
+.song-button:disabled {
+  pointer-events: none;
+}
+
+.song-button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.song-button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+    </style>
+
+    <script>
+      const albumSelect = document.getElementById('albumSelect'); // The select element
+      let albumCover; // Set the Album Cover
+      let songList; // Song List Element
+      const jsmediatags = window.jsmediatags
+
+      window.addEventListener("DOMContentLoaded", () => {
+        /*
+          Set the Album Cover here because it
+          doesnt like me setting it globally
+        */
+        albumCover = document.getElementById('albumCover');
+        songList = document.getElementById('songList')
+      })
+
+      function setAlbum() {
+        var unknownMetadata = false;
+        let albumSelected = document.getElementById('albumSelect').options[document.getElementById('albumSelect').selectedIndex].text; // Get selected value (make this line smaller dumbass)
+        albumSelected = albumSelected.toLowerCase();
+        albumSelected = albumSelected.replace(/\s/g, '');
+
+
+        $.getJSON("/kanye/en_us.json?url", function(data) {
+          let album = data[albumSelected]
+          if (album == "yeezus") {unknownMetadata = true}
+          let songNameArray = [];
+          let songPaths = [];
+          albumCover.src = album.coverUrl;
+          for (var prop in album.songs) {
+            var song = album.songs[prop]
+            songPaths.push(song)
+            songPaths.sort()
+            console.log(songPaths)
+            jsmediatags.read(window.location.href + song, {
+              onSuccess: function(tag) {
+                songNameArray.push(tag.tags.title)
+                songNameArray.sort()
+                console.log(songNameArray)
+              },
+              onError: function(err) {
+                console.log(err)
+              }
+            });
+          }
+
+          setTimeout(() => {
+            if (albumSelected == "yeezus") {
+              songNameArray.push(songNameArray.splice(0, 1)[0])
+            }
+            for (var i in songNameArray) {
+              let songButton = songList.appendChild(document.createElement('button'))
+              songButton.className = 'song-button'
+              songButton.innerHTML = songNameArray[i]
+              songButton.setAttribute("onClick", "playSong('"+songPaths[i]+"')")
+            }
+          }, 2000)
+        });
+    }
+
+    function playSong(_song) {
+      const songPlayer = document.getElementById('songPlayer')
+      songPlayer.src = _song
+      songPlayer.play();
+    } 
+    </script>
+  </head>
+  <body>
+    <select name="albumSelect" id="albumSelect">
+      <option value="thankgodfordrugs">Thank God For Drugs</option>
+      <option value="yeezus">Yeezus</option>
+    </select>
+    <button onclick="setAlbum()">Set Album</button>
+    <br>
+    <div id="albumData">
+      <img id="albumCover">
+      <div id="songList"></div>
+    </div>
+    <audio id="songPlayer"></audio>
+  </body>
+</html>
