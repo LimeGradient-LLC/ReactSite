@@ -16,6 +16,10 @@
         }
     },
     "thankgodfordrugs": {
-        "coverUrl": "https://lh3.googleusercontent.com/docs/AOD9vFqdwNHGq5ILWV0uOHb345CpljErbc5grRUTjldGZDU12r6RYPhXRVn2LeWH3FD3MHk9tnIz6_W--bDAAEKj7dCmtG44KUku6wbL-qcnUZpXeskw88MfmcuJFpwTEi_4YMxCwrqvN7CfXUVEuTchwa8Jrez9U_8YcFJmka7BvPJNpbA0R3nTl7LzZaP7dtS-c2E=w384"
+        "coverUrl": "https://lh3.googleusercontent.com/docs/AOD9vFqdwNHGq5ILWV0uOHb345CpljErbc5grRUTjldGZDU12r6RYPhXRVn2LeWH3FD3MHk9tnIz6_W--bDAAEKj7dCmtG44KUku6wbL-qcnUZpXeskw88MfmcuJFpwTEi_4YMxCwrqvN7CfXUVEuTchwa8Jrez9U_8YcFJmka7BvPJNpbA0R3nTl7LzZaP7dtS-c2E=w384",
+        "songs": {
+            "Awesome": "kanye/tgfd/Awesome_V5.mp3",
+            "BeyonceThruTheRoof": "kanye/tgfd/Beyonce_Thru_The_Roof_V2.mp3",
+        }
     }
 }

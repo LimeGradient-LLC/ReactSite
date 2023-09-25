@@ -10,7 +10,22 @@
     
     <style> 
       body {
-        background-color: rgb(154, 154, 154);
+
+      }
+
+      .audioPlayerButtonHolder {
+        display: flex;
+        justify-content: center;
+        z-index: 2;
+      }
+      
+      .audioPlayerButtons {
+        position: fixed;
+        bottom: 0;
+        background-color: grey;
+        border: 2px solid #1A1A1A;
+        border-radius: 5px;
+        padding: 20px;
       }
 
       .song-button {
@@ -60,6 +75,8 @@
       const albumSelect = document.getElementById('albumSelect'); // The select element
       let albumCover; // Set the Album Cover
       let songList; // Song List Element
+      let audioPlayerButtons;
+      let songPlayer;
       const jsmediatags = window.jsmediatags
 
       window.addEventListener("DOMContentLoaded", () => {
@@ -68,7 +85,10 @@
           doesnt like me setting it globally
         */
         albumCover = document.getElementById('albumCover');
-        songList = document.getElementById('songList')
+        songList = document.getElementById('songList');
+        audioPlayerButtons = document.querySelector(".audioPlayerButtonHolder");
+        audioPlayerButtons.style.visibility = 'hidden';
+        songPlayer = document.getElementById('songPlayer')
       })
 
       function setAlbum() {
@@ -116,9 +136,9 @@
     }
 
     function playSong(_song) {
-      const songPlayer = document.getElementById('songPlayer')
       songPlayer.src = _song
       songPlayer.play();
+      audioPlayerButtons.style.visibility = 'visible';
     } 
     </script>
   </head>
@@ -134,5 +154,8 @@
       <div id="songList"></div>
     </div>
     <audio id="songPlayer"></audio>
+    <div class="audioPlayerButtonHolder">
+      <h3 class="audioPlayerButtons">Test Track Title</h3>
+    </div>
   </body>
 </html>
