@@ -17,8 +17,8 @@
 			.then(result => result.json())
 			.then(response => {
 				const { username, discriminator, avatar, id } = response;
-				console.log(username)
-                window.location.href = `/?discord=${response}`
+                localStorage.setItem('discordID', id);
+                localStorage.setItem('discordUser', username);
 			})
 			.catch(console.error);
 	};

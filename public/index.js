@@ -6,8 +6,7 @@ let songPlayer;
 const jsmediatags = window.jsmediatags
 
 window.onload = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    console.log(urlParams.get('discord'))
+    console.log(localStorage.getItem('discordUser'))
 }
 
 window.addEventListener("DOMContentLoaded", () => {
