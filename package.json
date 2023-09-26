@@ -12,6 +12,7 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
-    "@xhayper/discord-rpc": "^1.0.22"
+    "@xhayper/discord-rpc": "^1.0.22",
+    "discord.js": "^14.13.0"
   }
 }

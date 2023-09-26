@@ -7,6 +7,7 @@ const jsmediatags = window.jsmediatags
 
 window.onload = () => {
     console.log(localStorage.getItem('discordUser'))
+    console.log(localStorage.getItem('discordID'))
 }
 
 window.addEventListener("DOMContentLoaded", () => {
