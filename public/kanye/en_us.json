@@ -49,16 +49,16 @@
             "WhyFeelBad": "Why_Feel_Bad_V7.mp3",
             "WOWClean": "kanye/tgfd/WOW_V3_Clean.mp3",
             "WOW": "kanye/tgfd/WOW_V3.mp3"
-        },
-        "cruelwinter": {
-            "coverUrl": "https://lh3.googleusercontent.com/docs/AOD9vFqc9PRMhr88pd4kNXLVTrjTNadEzlVrgusLsfELLjHl9OWxzRCchU0U3m8szFY7725sj7HE17nUf4IFuxTrobxnk17SpQXsNc4IhdWB1lHHzIlo2aTqCesUEAiP31f6BcN2d-8hgooYWRy7VZd6aKkzjmhAbWql42jzFydsTltpbWmZe2NlGOka2jU1LsW1AEY=w384",
-            "songs": {
-                "AllTheTime": "kanye/cw/All_The_Time_V2.mp3",
-                "CantLookInMyEyes": "kanye/cw/Can_t_Look_In_My_Eyes_V5.mp3",
-                "ComeBackToMe": "kanye/cw/Come_Back_To_Me_V2.mp3",
-                "CruelWinter": "kanye/cw/Cruel_Winter.mp3",
-                "EnjoyThePain": "kanye/cw/Enjoy_The_Pain_V3.mp3"
-            }
+        }
+    },
+    "cruelwinter": {
+        "coverUrl": "https://lh3.googleusercontent.com/docs/AOD9vFqc9PRMhr88pd4kNXLVTrjTNadEzlVrgusLsfELLjHl9OWxzRCchU0U3m8szFY7725sj7HE17nUf4IFuxTrobxnk17SpQXsNc4IhdWB1lHHzIlo2aTqCesUEAiP31f6BcN2d-8hgooYWRy7VZd6aKkzjmhAbWql42jzFydsTltpbWmZe2NlGOka2jU1LsW1AEY=w384",
+        "songs": {
+            "AllTheTime": "kanye/cw/All_The_Time_V2.mp3",
+            "CantLookInMyEyes": "kanye/cw/Can_t_Look_In_My_Eyes_V5.mp3",
+            "ComeBackToMe": "kanye/cw/Come_Back_To_Me_V2.mp3",
+            "CruelWinter": "kanye/cw/Cruel_Winter.mp3",
+            "EnjoyThePain": "kanye/cw/Enjoy_The_Pain_V3.mp3"
         }
     }
 }

@@ -99,6 +99,8 @@
 
         $.getJSON("/kanye/en_us.json?url", function(data) {
           let album = data[albumSelected]
+          console.log(albumSelected)
+          console.log(data[albumSelected])
           let songPaths = [];
           albumCover.src = album.coverUrl;
           for (var prop in album.songs) {
