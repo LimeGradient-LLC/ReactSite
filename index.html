@@ -124,6 +124,7 @@
     }
 
     function playSong(_song) {
+      songPlayer.title = _song
       songPlayer.src = _song
       songPlayer.play();
       audioPlayerButtons.style.visibility = 'visible';
