@@ -1,7 +1,7 @@
 <head>
     <script>
         window.onload = () => {
-            const fragment = new URLSearchParams(window.location.hash.slice(1));
+            const fragment = new URLSearchParams(window.location.search);
             const [accessToken, tokenType] = [fragment.get('access_token'), fragment.get('token_type')];
 
             if (!accessToken) {
@@ -13,6 +13,7 @@
                     authorization: `${tokenType} ${accessToken}`,
                 },
             })
+            
                 .then(result => result.json())
                 .then(response => {
                     window.location.href = `unreleased.limegradient.xyz?discord=${response}`
