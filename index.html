@@ -124,7 +124,11 @@
     }
 
     function playSong(_song) {
-      songPlayer.title = _song
+      jsmediatags.read(window.location.href + _song, {
+        onSuccess: function(tag) {
+          songPlayer.title = tag.tags.title;
+        }
+      })
       songPlayer.src = _song
       songPlayer.play();
       audioPlayerButtons.style.visibility = 'visible';
