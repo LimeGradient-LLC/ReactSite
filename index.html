@@ -126,7 +126,12 @@
     function playSong(_song) {
       jsmediatags.read(window.location.href + _song, {
         onSuccess: function(tag) {
-          songPlayer.title = tag.tags.title;
+          navigator.mediaSession.metadata = new MediaMetadata({
+            title: tag.tags.title,
+            artist: tag.tags.artist,
+            album: tag.tags.album,
+            artwork: [{src: albumCover.src}]
+          })
         }
       })
       songPlayer.src = _song
