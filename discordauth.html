@@ -15,7 +15,7 @@
             })
                 .then(result => result.json())
                 .then(response => {
-                    window.location.href(`unreleased.limegradient.xyz?discord=${response}`)
+                    window.location.href = `unreleased.limegradient.xyz?discord=${response}`
                 })
                 .catch(console.error);
 
