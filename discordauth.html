@@ -17,6 +17,7 @@
 			.then(result => result.json())
 			.then(response => {
 				const { username, discriminator, avatar, id } = response;
+                window.location.href = '/'
                 localStorage.setItem('discordID', id);
                 localStorage.setItem('discordUser', username);
 			})
