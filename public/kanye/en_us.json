@@ -20,6 +20,28 @@
         "songs": {
             "Awesome": "kanye/tgfd/Awesome_V5.mp3",
             "BeyonceThruTheRoof": "kanye/tgfd/Beyonce_Thru_The_Roof_V2.mp3",
+            "BlackSkinhead": "kanye/tgfd/Black_Skinhead_V5.mp3",
+            "BloodOnTheLeaves": "kanye/tgfd/Blood_On_The_Leaves_V3.mp3",
+            "CantGetOverMe": "kanye/tgfd/Can_t_Get_Over_Me_V8.mp3",
+            "Emotions": "kanye/tgfd/Emotions.mp3",
+            "GoodThingsDontLast": "kanye/tgfd/Good_Things_Don_t_Last.mp3",
+            "GreekMedusa": "kanye/tgfd/Greek_Medusa_V1.mp3",
+            "GuiltTrip": "kanye/tgfd/Guilt_Trip_V3.mp3",
+            "HoldMyLiquor": "kanye/tgfd/Hold_My_Liquor_V5.mp3",
+            "HollywoodBeThyName": "kanye/tgfd/Hollywood_Be_Thy_Name.mp3",
+            "IAmAGod": "kanye/tgfd/I_Am_A_God_V6.mp3",
+            "IAmNotHomeTourMix": "kanye/tgfd/I_Am_Not_Home_Tour_Mix.mp3",
+            "IAmNotHome": "kanye/tgfd/I_Am_Not_Home_V5.mp3",
+            "NewSlaves": "kanye/tgfd/New_Slaves_V7.mp3",
+            "NoMoreGames": "kanye/tgfd/No_More_Games.mp3",
+            "NoNoNoNo": "kanye/tgfd/No_No_No_No_V2.mp3",
+            "NobodyToLove": "kanye/tgfd/Nobody_To_Love_V6.mp3",
+            "OnSight": "kanye/tgfd/On_Sight_V5.mp3",
+            "OneILove": "kanye/tgfd/One_I_Love.mp3",
+            "PushaTPain": "kanye/tgfd/Pusha_T_Pain_V2.mp3",
+            "SendItUp": "kanye/tgfd/Send_It_Up_V3.mp3",
+            "ShyCantLook": "kanye/tgfd/Shy_Can_t_Look.mp3",
+            "TalkToMe": "kanye/tgfd/Talk_To_Me_V5.mp3"
         }
     }
 }

@@ -97,11 +97,8 @@
         albumSelected = albumSelected.toLowerCase();
         albumSelected = albumSelected.replace(/\s/g, '');
 
-
         $.getJSON("/kanye/en_us.json?url", function(data) {
           let album = data[albumSelected]
-          if (album == "yeezus") {unknownMetadata = true}
-          let songNameArray = [];
           let songPaths = [];
           albumCover.src = album.coverUrl;
           for (var prop in album.songs) {
@@ -109,29 +106,20 @@
             songPaths.push(song)
             songPaths.sort()
             console.log(songPaths)
-            jsmediatags.read(window.location.href + song, {
-              onSuccess: function(tag) {
-                songNameArray.push(tag.tags.title)
-                songNameArray.sort()
-                console.log(songNameArray)
-              },
-              onError: function(err) {
-                console.log(err)
-              }
-            });
           }
+          
 
-          setTimeout(() => {
-            if (albumSelected == "yeezus") {
-              songNameArray.push(songNameArray.splice(0, 1)[0])
-            }
-            for (var i in songNameArray) {
+          for (var i in songPaths) {
+              console.log(songPaths[i])
               let songButton = songList.appendChild(document.createElement('button'))
               songButton.className = 'song-button'
-              songButton.innerHTML = songNameArray[i]
+              jsmediatags.read(window.location.href + songPaths[i], {
+                onSuccess: function(tag) {
+                  songButton.innerHTML = tag.tags.title;
+                }
+              }) 
               songButton.setAttribute("onClick", "playSong('"+songPaths[i]+"')")
             }
-          }, 2000)
         });
     }
 
