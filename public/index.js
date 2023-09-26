@@ -10,7 +10,7 @@ window.onload = () => {
     const [accessToken, tokenType] = [fragment.get('access_token'), fragment.get('token_type')];
 
     if (!accessToken) {
-        return (document.getElementById('login').style.display = 'block');
+        console.log('erorr')
     }
 
     fetch('https://discord.com/api/users/@me', {
