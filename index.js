@@ -5,6 +5,12 @@ let audioPlayerButtons;
 let songPlayer;
 const jsmediatags = window.jsmediatags
 
+window.onload = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const {username, discriminator, avatar, id} = urlParams.get('discord')
+    console.log(id);
+}
+
 window.addEventListener("DOMContentLoaded", () => {
     /*
       Set the Album Cover here because it
