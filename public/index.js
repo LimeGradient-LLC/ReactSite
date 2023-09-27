@@ -23,11 +23,16 @@ window.addEventListener("DOMContentLoaded", () => {
 })
 
 function setAlbum() {
-    var unknownMetadata = false;
     let albumSelected = document.getElementById('albumSelect').options[document.getElementById('albumSelect').selectedIndex].text; // Get selected value (make this line smaller dumbass)
     albumSelected = albumSelected.toLowerCase();
     albumSelected = albumSelected.replace(/\s/g, '');
 
+    if (document.getElementById('songList').hasChildNodes()) {
+        document.querySelectorAll('.song-button').forEach((remove) => {
+            remove.remove()
+        })
+    }
+    
     $.getJSON("/kanye/en_us.json?url", function (data) {
         let album = data[albumSelected]
         console.log(albumSelected)
@@ -40,7 +45,6 @@ function setAlbum() {
             songPaths.sort()
             console.log(songPaths)
         }
-
 
         for (var i in songPaths) {
             console.log(songPaths[i])
