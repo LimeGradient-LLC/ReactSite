@@ -22,8 +22,8 @@ window.addEventListener("DOMContentLoaded", () => {
     songPlayer = document.getElementById('songPlayer')
 })
 
-function setAlbum() {
-    let albumSelected = document.getElementById('albumSelect').options[document.getElementById('albumSelect').selectedIndex].text; // Get selected value (make this line smaller dumbass)
+function setAlbum(album) {
+    let albumSelected = album
     albumSelected = albumSelected.toLowerCase();
     albumSelected = albumSelected.replace(/\s/g, '');
 
@@ -37,8 +37,8 @@ function setAlbum() {
         let album = data[albumSelected]
         console.log(albumSelected)
         console.log(data[albumSelected])
+        document.getElementById('albumTitle').innerHTML = data[albumSelected].title
         let songPaths = [];
-        albumCover.src = album.coverUrl;
         for (var prop in album.songs) {
             var song = album.songs[prop]
             songPaths.push(song)
@@ -74,4 +74,9 @@ function playSong(_song) {
     songPlayer.src = _song
     songPlayer.play();
     audioPlayerButtons.style.visibility = 'visible';
-} 
+    songPlayer.addEventListener('ended', function() {
+        songPlayer.currentTime = 0;
+        songPlayer.src = songPaths[songPaths.findIndex(_song)+=1]
+        songPlayer.play()
+    })
+}

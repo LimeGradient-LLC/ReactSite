@@ -1,90 +1,37 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
-    
-    <style> 
 
-      .audioPlayerButtonHolder {
-        display: flex;
-        justify-content: center;
-        z-index: 2;
-      }
-      
-      .audioPlayerButtons {
-        position: fixed;
-        bottom: 0;
-        background-color: grey;
-        border: 2px solid #1A1A1A;
-        border-radius: 5px;
-        padding: 20px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap" rel="stylesheet">
+  <script src="index.js"></script>
+</head>
 
-      .song-button {
-  appearance: none;
-  background-color: #000000;
-  border: 2px solid #1A1A1A;
-  border-radius: 15px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  font-size: 16px;
-  font-weight: 600;
-  line-height: normal;
-  margin: 0;
-  min-height: 60px;
-  min-width: 0;
-  outline: none;
-  padding: 16px 24px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: 100%;
-  will-change: transform;
-}
-
-.song-button:disabled {
-  pointer-events: none;
-}
-
-.song-button:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-  transform: translateY(-2px);
-}
-
-.song-button:active {
-  box-shadow: none;
-  transform: translateY(0);
-}
-    </style>
-
-   <script src="index.js"></script>
-  </head>
-  <body>
-    <select name="albumSelect" id="albumSelect">
-      <option value="cruelwinter">Cruel Winter</option>
-      <option value="thankgodfordrugs">Thank God For Drugs</option>
-      <option value="yeezus">Yeezus</option>
-    </select>
-    <button onclick="setAlbum()">Set Album</button>
+<body>
+  <div id="albumSelect">
+    <button onclick="setAlbum('thankgodfordrugs')"><img width="300"
+        src="https://lh3.googleusercontent.com/docs/AOD9vFqdwNHGq5ILWV0uOHb345CpljErbc5grRUTjldGZDU12r6RYPhXRVn2LeWH3FD3MHk9tnIz6_W--bDAAEKj7dCmtG44KUku6wbL-qcnUZpXeskw88MfmcuJFpwTEi_4YMxCwrqvN7CfXUVEuTchwa8Jrez9U_8YcFJmka7BvPJNpbA0R3nTl7LzZaP7dtS-c2E=w384"></button>
     <br>
-    <div id="albumData">
-      <img id="albumCover">
-      <div id="songList"></div>
-    </div>
-    <audio id="songPlayer"></audio>
-    <div class="audioPlayerButtonHolder">
-      <h3 class="audioPlayerButtons">Test Track Title</h3>
-    </div>
-  </body>
+    <button onclick="setAlbum('yeezus')"><img width="300"
+        src="https://lh3.googleusercontent.com/docs/AOD9vFqnxef4MxqQMvWoSw46q3fRa6aRYrvjbFjGVLN-lNk9B9nZfG2CbX74KjexKW4wt9oBMpDR1u82P1mgFqZWVbAu3KsaXb1H5gyDWa-Dpv4v5fDv63AhnD9J-akcxElTIb2ck-ktavLCWFRG-IHO9gHL5mzYKjGe20t7E3shNUC-OPkguz3VpelhQAKkuZjmzug=w384"></button>
+    <br>
+    <button onclick="setAlbum('cruelwinter')"><img width="300"
+        src="https://lh3.googleusercontent.com/docs/AOD9vFqc9PRMhr88pd4kNXLVTrjTNadEzlVrgusLsfELLjHl9OWxzRCchU0U3m8szFY7725sj7HE17nUf4IFuxTrobxnk17SpQXsNc4IhdWB1lHHzIlo2aTqCesUEAiP31f6BcN2d-8hgooYWRy7VZd6aKkzjmhAbWql42jzFydsTltpbWmZe2NlGOka2jU1LsW1AEY=w384"></button>
+  </div>
+  <br>
+  <div id="albumData">
+    <h1 id="albumTitle"></h1>
+    <div id="songList"></div>
+  </div>
+  <audio id="songPlayer"></audio>
+</body>
+
 </html>
