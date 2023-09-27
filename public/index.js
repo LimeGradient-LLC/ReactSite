@@ -1,6 +1,9 @@
 const albumSelect = document.getElementById('albumSelect'); // The select element
 let albumCover; // Set the Album Cover
 let songList; // Song List Element
+let audioPlayerButtons;
+let songPlayer;
+let songPaths = [];
 const jsmediatags = window.jsmediatags
 
 window.onload = () => {
@@ -33,7 +36,7 @@ function setAlbum(album) {
         console.log(albumSelected)
         console.log(data[albumSelected])
         document.getElementById('albumTitle').innerHTML = data[albumSelected].title
-        let songPaths = [];
+        albumCover = album.coverUrl
         for (var prop in album.songs) {
             var song = album.songs[prop]
             songPaths.push(song)
@@ -63,7 +66,7 @@ function playSong(_song) {
                 title: tag.tags.title,
                 artist: tag.tags.artist,
                 album: tag.tags.album,
-                artwork: [{ src: albumCover.src }]
+                artwork: [{ src: albumCover }]
             })
         }
     })
