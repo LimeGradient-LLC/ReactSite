@@ -1,8 +1,6 @@
 const albumSelect = document.getElementById('albumSelect'); // The select element
 let albumCover; // Set the Album Cover
 let songList; // Song List Element
-let audioPlayerButtons;
-let songPlayer;
 const jsmediatags = window.jsmediatags
 
 window.onload = () => {
@@ -17,9 +15,6 @@ window.addEventListener("DOMContentLoaded", () => {
     */
     albumCover = document.getElementById('albumCover');
     songList = document.getElementById('songList');
-    audioPlayerButtons = document.querySelector(".audioPlayerButtonHolder");
-    audioPlayerButtons.style.visibility = 'hidden';
-    songPlayer = document.getElementById('songPlayer')
 })
 
 function setAlbum(album) {
@@ -61,6 +56,7 @@ function setAlbum(album) {
 }
 
 function playSong(_song) {
+    let songPlayer = document.getElementById('songPlayer')
     jsmediatags.read(window.location.href + _song, {
         onSuccess: function (tag) {
             navigator.mediaSession.metadata = new MediaMetadata({
@@ -73,7 +69,6 @@ function playSong(_song) {
     })
     songPlayer.src = _song
     songPlayer.play();
-    audioPlayerButtons.style.visibility = 'visible';
     songPlayer.addEventListener('ended', function() {
         songPlayer.currentTime = 0;
         songPlayer.src = songPaths[songPaths.findIndex(_song)+=1]
