@@ -1,9 +1,13 @@
-const url = 'https://unreleased.limegradient.xyz/api/kanyewest/db.json'
+const url = 'https://unreleased.limegradient.xyz/api/kanyewest/'
 
-async function loadJSON() {
-    const res = await fetch(url);
-    const json = res.json();
-    console.log(json);
+let thankgodfordrugs = [];
+
+async function loadDBJSON() {
+    fetch(url + "db.json")
+    .then((res) => {return res.json();})
+    .then((json) => {
+        
+    });
 }
 
-loadJSON();
+loadDBJSON();
