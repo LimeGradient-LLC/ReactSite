@@ -1,1 +1,2 @@
 Header set Access-Control-Allow-Origin 'https://starlit-biscotti-dde833.netlify.app'
+Header set Access-Control-Expose-Headers *
