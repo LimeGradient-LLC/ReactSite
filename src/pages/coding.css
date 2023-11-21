@@ -1,0 +1,24 @@
+@keyframes fade-in {
+    from {
+      opacity: 0%;
+    }
+    to {
+      opacity: 100%;
+    }
+}
+
+.coding {
+    animation-name: fade-in;
+    animation-duration: 1s;
+    width: 100vh;
+}
+
+.floatLeft {
+    float: left;
+    inline-size: 300px;
+}
+
+.floatRight {
+    float: right;
+    inline-size: 300px;
+}

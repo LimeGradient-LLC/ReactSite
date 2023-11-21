@@ -6,7 +6,6 @@ import App from './App'
 import { FrontPage } from './App';
 
 import './index.css'
-import CodingKnowledge from './pages/knowledge';
 
 ReactDOM.render((
   <BrowserRouter>
