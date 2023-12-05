@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom';
 import Main from './mainfunc';
+
 
 class FrontPage extends React.Component {
   render() {
@@ -31,6 +32,15 @@ class MenuBar extends React.Component {
 }
 
 function App() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4946403409755821";
+    script.async = true
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script)
+    }
+  });
   return (
     <div className="App">
       <MenuBar />
