@@ -11,27 +11,24 @@
             return e.value;
         }
     </script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/glowing-button.css">
 </head>
 <body>
-    <a href="index.html">Go Back</a>
-    <br>
-    <br>
+    <div class="links">
+        <button onclick="window.location.href='ds.html'" class="custom-button">DS Games</button>
+        <button onclick="window.location.href='gb.html'" class="custom-button">Gameboy Games</button>
+        <button onclick="window.location.href='gba.html'" class="custom-button">GBA Games</button>
+        <button onclick="window.location.href='N64Wasm/dist/index.html'" class="custom-button">N64 Games</button>
+        <button onclick="window.location.href='dos.html'" class="custom-button">DOS Games</button>
+    </div>
     <label for="romFile">Games:</label>
     <select name="romFile" id="romFile">
         <option value="minishcap">The Legend of Zelda: The Minish Cap</option>
         <option value="pokemonblack">Pokemon Black</option>
-        <option value="pokemondarkrising">Pokemon Dark Rising</option>
         <option value="pokemonemerald">Pokemon Emerald</option>
-        <option value="pokemonemeraldog">OG Pokemon Emerald</option>
-        <option value="pokemonicesilver">Pokemon Ice Silver</option>
-        <option value="pokemonmetalred">Pokemon Metal Red</option>
-        <option value="pokemonmoonemerald">Pokemon Moon Emerald</option>
-        <option value="pokemonorangeislands">Pokemon Orange Islands</option>
         <option value="pokemonruby">Pokemon Ruby</option>
         <option value="pokemonsapphire">Pokemon Sapphire</option>
-        <option value="pokemonsworeshilled">Pokemon Swore Shilled</option>
-        <option value="pokemonultraviolet">Pokemon Ultra Violet</option>
-        <option value="pokemonviolet">Pokemon Violet</option>
         <option value="sma2">Super Mario Advance 2</option>
         <option value="sma4">Super Mario Advance 4</option>
         <option value="sonicadvance3">Sonic Advance 3</option>

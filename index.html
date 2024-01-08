@@ -1,27 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emulator</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/glowing-button.css">
     <style>
         a {
             font-size: 24px;
         }
     </style>
+    <script>
+        window.onload = () => {
+            document.querySelector(".ds").style.display = "none";
+
+            document.querySelector("desmond-player").style.display = "none"
+
+            alert("I am currently working on making the site better, so bugs might occur")
+        }
+    </script>
 </head>
+
 <body>
-<center>
-<a href="ds.html">Go to DS Emulator</a> <br>
-<a href="gb.html">Go to Gameboy Emulator</a> <br>
-<a href="gba.html">Go to Gameboy Advance Emulator</a> <br>
-<a href="N64Wasm/dist/index.html">Go to N64 Emulator</a> <br>
-<a href="dos.html">Go to DOS Emulator</a> <br>
-</center>
-<br>
-<center><h1 id="patchNotes">Emulator Patch Notes</h1></center>
-<br>
-<center><p id="patchNotes">Over the past 2 weeks I have been hard at work trying to make the emulator more enjoyable for everyone and functional for everyone. I have run into some roadblocks although such as wifi blocking my CDN website. Thats why I have completely overhauled how I store my games! I store them on the same website as the emulators. This increases the risk of the site getting banned but it also makes it miles easier to add more games and unblocks said games. If this site is blocked I will be changing domains and if I hear of blockages happening I will post the new domain here. Keep on Gaming!</p></center>
+    <script>
+        function selectGameCategory(game) {
+            document.querySelector(".ds").style.display = "none";
+
+            document.querySelector("desmond-player").style.display = "none"
+            switch (game) {
+                case "ds":
+                    document.querySelector(".ds").style.display = "block";
+                    document.querySelector("desmond-player").style.display = "block";
+                    break;
+            }
+        }
+    </script>
+    <div class="links">
+        <button onclick="selectGameCategory('ds')" class="custom-button">DS Games</button>
+        <button onclick="selectGameCategory('gb')" class="custom-button">Gameboy Games</button>
+        <button onclick="selectGameCategory('gba')" class="custom-button">GBA Games</button>
+        <button onclick="selectGameCategory('n64')" class="custom-button">N64 Games</button>
+        <button onclick="selectGameCategory('dos')" class="custom-button">DOS Games</button>
+    </div>
+    <br>
+    <br>
+    <div class="games">
+        <div class="ds">
+            <button onclick="loadEmulatorDS('codblackops')"><img width="200px" src="nds/codblackops.jpeg"></button>
+            <button onclick="loadEmulatorDS('legostarwarstcs')"><img width="200px" src="nds/legostarwarstcs.jpeg"></button>
+            <button onclick="loadEmulatorDS('mariokartds')"><img width="200px" src="nds/mariokartds.jpeg"></button>
+            <button onclick="loadEmulatorDS('mariopartyds')"><img width="200px" src="nds/mariopartyds.jpeg"></button>
+            <button onclick="loadEmulatorDS('nsmb')"><img width="200px" src="nds/nsmb.jpeg"></button>
+            <button onclick="loadEmulatorDS('phantomhourglass')"><img width="200px" src="nds/phantomhourglass.jpeg"></button>
+            <button onclick="loadEmulatorDS('pokediamond')"><img width="200px" src="nds/pokediamond.jpeg"></button>
+            <button onclick="loadEmulatorDS('pokepearl')"><img width="200px" src="nds/pokepearl.jpeg"></button>
+            <button onclick="loadEmulatorDS('sm64')"><img width="200px" src="nds/sm64.jpeg"></button>
+            <button onclick="loadEmulatorDS('wildworld')"><img width="200px" src="nds/wildworld.jpeg"></button>
+        </div>
+    </div>
+    <div class="player">
+        <desmond-player id="player"></desmond-player>
+            <script src="https://cdn.jsdelivr.net/gh/Unzor/desmond/cdn/desmond.min.js"></script>
+            <script>
+                function loadEmulatorDS(name) {
+                    document.querySelector(".ds").style.display = "none";
+                    setTimeout(function () {
+                        document.querySelector("desmond-player").loadURL(`nds/${name}.nds`);
+                        document.querySelector("desmond-player").enableMicrophone();
+                        document.querySelector("desmond-player").shadowRoot.querySelector("#top").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 30%;height: 40%;";
+
+                        document.querySelector("desmond-player").shadowRoot.querySelector("#bottom").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 70%;height: 40%;";
+                    }, 500)
+                }
+            </script>
+    </div>
 </body>
+
 </html>
