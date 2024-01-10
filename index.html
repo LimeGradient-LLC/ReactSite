@@ -16,10 +16,13 @@
     <script>
         window.onload = () => {
             document.querySelector(".ds").style.display = "none";
+            document.querySelector(".gba").style.display = "none"
+            document.querySelector(".gb").style.display = "none"
 
             document.querySelector("desmond-player").style.display = "none"
+            document.querySelector(".gb-player").style.display = "none"
 
-            alert("I am currently working on making the site better, so bugs might occur")
+            // alert("I am currently working on making the site better, so bugs might occur")
         }
     </script>
 </head>
@@ -28,12 +31,20 @@
     <script>
         function selectGameCategory(game) {
             document.querySelector(".ds").style.display = "none";
+            document.querySelector(".gba").style.display = "none"
+            document.querySelector(".gb").style.display = "none"
 
             document.querySelector("desmond-player").style.display = "none"
             switch (game) {
                 case "ds":
                     document.querySelector(".ds").style.display = "block";
                     document.querySelector("desmond-player").style.display = "block";
+                    break;
+                case "gba":
+                    document.querySelector(".gba").style.display = "block"
+                    break;
+                case "gb":
+                    document.querySelector(".gb").style.display = "block"
                     break;
             }
         }
@@ -60,22 +71,53 @@
             <button onclick="loadEmulatorDS('sm64')"><img width="200px" src="nds/sm64.jpeg"></button>
             <button onclick="loadEmulatorDS('wildworld')"><img width="200px" src="nds/wildworld.jpeg"></button>
         </div>
+        <div class="gba">
+            <button onclick="window.location.href= 'gba/IodineGBA/index.html#minishcap'"><img width="200px" src="gba/games/minishcap.jpeg"></button>
+            <button onclick="window.location.href= 'gba/IodineGBA/index.html#pokemonemerald'"><img width="200px" src="gba/games/pokemonemerald.jpeg"></button>
+            <button onclick="window.location.href= 'gba/IodineGBA/index.html#pokemonfirered'"><img width="200px" src="gba/games/pokemonfirered.jpeg"></button>
+            <button onclick="window.location.href= 'gba/IodineGBA/index.html#pokemonruby'"><img width="200px" src="gba/games/pokemonruby.jpeg"></button>
+            <button onclick="window.location.href= 'gba/IodineGBA/index.html#pokemonsapphire'"><img width="200px" src="gba/games/pokemonsapphire.jpeg"></button>
+            <button onclick="window.location.href= 'gba/IodineGBA/index.html#sma2'"><img width="200px" src="gba/games/sma2.jpeg"></button>
+            <button onclick="window.location.href= 'gba/IodineGBA/index.html#sma4'"><img width="200px" src="gba/games/sma4.jpeg"></button>
+            <button onclick="window.location.href= 'gba/IodineGBA/index.html#sonicadvance3'"><img width="200px" src="gba/games/sonicadvance3.jpeg"></button>
+            <button onclick="window.location.href= 'gba/IodineGBA/index.html#supercircuit'"><img width="200px" src="gba/games/supercircuit.jpeg"></button>
+            <button onclick="window.location.href= 'gba/IodineGBA/index.html#superstarsaga'"><img width="200px" src="gba/games/superstarsaga.jpeg"></button>
+        </div>
+        <div class="gb">
+            <button onclick="loadEmulatorGB('linksawakening.gb')"><img width="200px" src="gb/linksawakening.jpeg"></button>
+            <button onclick="loadEmulatorGB('pokemonblue.gb')"><img width="200px" src="gb/pokemonblue.jpeg"></button>
+            <button onclick="loadEmulatorGB('pokemoncrystal.gbc')"><img width="200px" src="gb/pokemoncrystal.jpeg"></button>
+            <button onclick="loadEmulatorGB('pokemongold.gbc')"><img width="200px" src="gb/pokemongold.jpeg"></button>
+            <button onclick="loadEmulatorGB('pokemonred.gb')"><img width="200px" src="gb/pokemonred.jpeg"></button>
+            <button onclick="loadEmulatorGB('pokemonsilver.gbc')"><img width="200px" src="gb/pokemonsilver.jpeg"></button>
+            <button onclick="loadEmulatorGB('pokemonyellow.gbc')"><img width="200px" src="gb/pokemonyellow.jpeg"></button>
+            <button onclick="loadEmulatorGB('sml.gb')"><img width="200px" src="gb/sml.jpeg"></button>
+            <button onclick="loadEmulatorGB('sml2.gb')"><img width="200px" src="gb/sml2.jpeg"></button>
+        </div>
     </div>
     <div class="player">
         <desmond-player id="player"></desmond-player>
-            <script src="https://cdn.jsdelivr.net/gh/Unzor/desmond/cdn/desmond.min.js"></script>
-            <script>
-                function loadEmulatorDS(name) {
-                    document.querySelector(".ds").style.display = "none";
-                    setTimeout(function () {
-                        document.querySelector("desmond-player").loadURL(`nds/${name}.nds`);
-                        document.querySelector("desmond-player").enableMicrophone();
-                        document.querySelector("desmond-player").shadowRoot.querySelector("#top").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 30%;height: 40%;";
+        <script src="https://cdn.jsdelivr.net/gh/Unzor/desmond/cdn/desmond.min.js"></script>
+        <script>
+            function loadEmulatorDS(name) {
+                document.querySelector(".ds").style.display = "none";
+                setTimeout(function () {
+                    document.querySelector("desmond-player").loadURL(`nds/${name}.nds`);
+                    document.querySelector("desmond-player").enableMicrophone();
+                    document.querySelector("desmond-player").shadowRoot.querySelector("#top").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 30%;height: 40%;";
 
-                        document.querySelector("desmond-player").shadowRoot.querySelector("#bottom").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 70%;height: 40%;";
-                    }, 500)
-                }
-            </script>
+                    document.querySelector("desmond-player").shadowRoot.querySelector("#bottom").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 70%;height: 40%;";
+                }, 500)
+            }
+        </script>
+        <iframe class="gb-player" title="WasmBoy Iframe Embed" width="640" height="576" allowfullscreen="true"> </iframe>
+        <script>
+            function loadEmulatorGB(name) {
+                document.querySelector(".gb-player").style.display = "block"
+                document.querySelector(".gb").style.display = "none"
+                document.querySelector('.gb-player').src = `https://wasmboy.app/iframe/?rom-url=https://emulator.limegradient.xyz/gb/${name}`
+            }
+        </script>
     </div>
 </body>
 

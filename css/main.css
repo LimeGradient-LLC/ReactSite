@@ -17,3 +17,15 @@
     height: auto;
     display: inline-block;
 }
+
+body {
+    background: rgb(2,0,36);
+    background: linear-gradient(270deg, rgba(2,0,36,0) 0%, rgba(94,94,96,0.5) 69%, rgba(207,207,207,1) 100%);
+}
+
+.gb-player {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
