@@ -1,5 +1,5 @@
 var ROMLIST = [
-    {url:"emulator.limegradient.xyz/n64/conkersbadfurday.z64",title:"Conkers Bad Fur Day"},
+    {url:"roms/conkersbadfurday.z64",title:"Conkers Bad Fur Day"},
     {url:"../../n64/donkeykong64.z64",title:"Donkey Kong 64"},
     {url:"../../n64/majorasmask.z64",title:"The Legend of Zelda: Majoras Mask"},
     {url:"../../n64/mariokart64.z64",title:"Mario Kart 64"},
