@@ -1,3 +1,4 @@
 [submodule "N64Wasm"]
 	path = N64Wasm
 	url = https://github.com/LimeData/N64Wasm
+	branch = master
