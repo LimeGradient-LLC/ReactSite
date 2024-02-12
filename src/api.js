@@ -17,16 +17,14 @@ router.get("/secure", (req, res) => {
   res.sendFile(path.join(__dirname + "secure.html"))
 })
 
-const proxyMiddleware = createProxyMiddleware({
-  target: "https://discord.com/",
-  changeOrigin: true,
-  pathRewrite: {
-    "^/proxy": "",
-  }
-})
+const proxyMiddleware = 
 
 router.get("/proxy", proxyMiddleware)
 
+app.use('/proxy', createProxyMiddleware({
+  target: "https://discord.com/",
+  changeOrigin: true,
+}))
 app.use(`/.netlify/functions/api`, router);
 
 module.exports = app;
