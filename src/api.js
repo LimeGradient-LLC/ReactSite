@@ -1,7 +1,7 @@
 const express = require("express");
 const serverless = require("serverless-http");
 const path = require('path')
-const proxy = require('express-http-proxy');
+const proxy = require('http-proxy-middleware');
 const url = require('url')
 
 const app = express();
@@ -17,9 +17,8 @@ router.get("/secure", (req, res) => {
   res.sendFile(path.join(__dirname + "secure.html"))
 })
 
-router.get("/encrypt", (req, res) => {
-  proxy("www.discord.com", {proxyReqPathResolver: req => url.parse(req.baseUrl).path})
-})
+const apiProxy = proxy('/api', {target: "https://discord.com"})
+router.get("/pro", apiProxy)
 
 app.use(`/.netlify/functions/api`, router);
 

@@ -7,6 +7,7 @@
     "express": "^4.16.4",
     "express-http-proxy": "^2.0.0",
     "hoxy": "^3.3.1",
+    "http-proxy-middleware": "^2.0.6",
     "netlify-lambda": "^1.4.3",
     "serverless-http": "^1.9.1"
   },
