@@ -17,8 +17,6 @@ router.get("/secure", (req, res) => {
   res.sendFile(path.join(__dirname + "secure.html"))
 })
 
-router.get("/proxy", proxyMiddleware)
-
 router.get('/proxy', createProxyMiddleware({
   target: "https://discord.com/",
   changeOrigin: true,
