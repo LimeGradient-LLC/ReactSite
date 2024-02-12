@@ -1,7 +1,8 @@
 const express = require("express");
 const serverless = require("serverless-http");
 const path = require('path')
-const {createProxyMiddleware, fixRequestBody, responseInterceptor} = require('http-proxy-middleware');
+const {createProxyMiddleware} = require('http-proxy-middleware');
+const cors = require('cors')
 const url = require('url')
 
 const app = express();
@@ -17,10 +18,14 @@ router.get("/secure", (req, res) => {
   res.sendFile(path.join(__dirname + "secure.html"))
 })
 
-router.get('/proxy', createProxyMiddleware({
-  target: "https://discord.com/",
+app.use(cors())
+app.use(createProxyMiddleware({
+  router: (req) => new URL(req.path.substring(1)),
+  pathRewrite: (path, req) => (new URL(req.path.substring(1))).pathname,
   changeOrigin: true,
+  logLevel: "debug"
 }))
+
 app.use(`/.netlify/functions/api`, router);
 
 module.exports = app;
