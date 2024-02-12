@@ -18,8 +18,8 @@ router.get("/secure", (req, res) => {
 })
 
 const apiProxy = proxy('/api', {target: "https://discord.com"})
-router.get("/pro", apiProxy)
 
+app.use(apiProxy)
 app.use(`/.netlify/functions/api`, router);
 
 module.exports = app;
