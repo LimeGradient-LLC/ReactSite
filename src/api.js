@@ -16,7 +16,9 @@ router.get("/secure", (req, res) => {
   res.sendFile(path.join(__dirname + "secure.html"))
 })
 
-router.get("/encrypt", proxy('www.discord.com'))
+router.get("/encrypt", (req, res) => {
+  proxy("www.discord.com")
+})
 
 app.use(`/.netlify/functions/api`, router);
 
