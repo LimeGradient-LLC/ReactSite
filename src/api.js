@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/secure", (req, res) => {
-  res.sendFile(path.join(__dirname + "/secure.html"))
+  res.sendFile("index.html")
 })
 
 app.use(`/.netlify/functions/api`, router);
