@@ -10,6 +10,10 @@ router.get("/", (req, res) => {
   });
 });
 
+router.get("/secure", (req, res) => {
+  res.sendFile(__dirname + "/secure.html")
+})
+
 app.use(`/.netlify/functions/api`, router);
 
 module.exports = app;
