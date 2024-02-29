@@ -7,7 +7,7 @@ class FrontPage extends React.Component {
   render() {
     return (
       <div className='frontPage'>
-        <h1>Kevin Burns</h1><br />
+        <h1>LimeGradient</h1><br />
         <h3>Coding, Youtube, and More</h3>
       </div>
     )
