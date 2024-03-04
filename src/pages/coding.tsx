@@ -6,7 +6,7 @@ export default class Coding extends React.Component {
         return (
             <div className="coding">
                 <h1>Coding</h1>
-                <h3>My Background/Knowledge + Projects</h3> <br />
+                <h3>My Background/Knowledge</h3> <br />
                 <h1>Background</h1>
                 <div className="floatLeft">
                     <h3>HTML/CSS</h3>

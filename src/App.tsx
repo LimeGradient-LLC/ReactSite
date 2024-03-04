@@ -11,6 +11,9 @@ class FrontPage extends React.Component {
       <div className='frontPage'>
         <h1>LimeGradient</h1><br />
         <h3>Coding, Youtube, and More</h3>
+        <a href='https://github.com/limegradient' target="_blank">
+          <img src={githubLogo} className="logo" alt='Github Logo'/>
+        </a>
       </div>
     )
   }
@@ -27,6 +30,10 @@ class MenuBar extends React.Component {
         <Link to="/coding">
           <button>Coding</button>
         </Link>
+        <div className='divider' />
+        <Link to="/coding_projects">
+          <button>Projects</button>
+        </Link>
       </div>
     );
   }
@@ -38,9 +45,6 @@ function App() {
       <MenuBar />
       <Main />
       <br />
-      <a href='https://github.com/limegradient' target="_blank">
-        <img src={githubLogo} className="logo" alt='Github Logo'/>
-      </a>
     </div>
   )
 }
