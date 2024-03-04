@@ -3,6 +3,8 @@ import './App.css'
 import { Link } from 'react-router-dom';
 import Main from './mainfunc';
 
+import githubLogo from "./assets/github.png"
+
 class FrontPage extends React.Component {
   render() {
     return (
@@ -35,6 +37,10 @@ function App() {
     <div className="App">
       <MenuBar />
       <Main />
+      <br />
+      <a href='https://github.com/limegradient' target="_blank">
+        <img src={githubLogo} className="logo" alt='Github Logo'/>
+      </a>
     </div>
   )
 }
