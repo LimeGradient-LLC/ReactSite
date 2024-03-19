@@ -12,11 +12,6 @@ export default class Projects extends React.Component {
                 <p>It has taught me many things such as OOP and Memory Management due to the limitations of the Wii.</p>
                 <p>You can view the Github Repository  <a href="https://github.com/LimeGradient/GD-Wii">here</a></p>
                 <br />
-
-                <h1>HySky Client</h1>
-                <p>HySky Client was my first attempt at making a Minecraft Launcher in JS.</p>
-                <p>It taught me many things such as Electron, Discord RPC, and Microsoft Authentication</p>
-                <p>You can view the Github Repoisitory <a href="https://github.com/LimeGradient/HySky-Client">here</a></p>
             </div>
         )
     }
