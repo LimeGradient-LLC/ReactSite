@@ -18,6 +18,7 @@
             document.querySelector(".ds").style.display = "none";
             document.querySelector(".gba").style.display = "none"
             document.querySelector(".gb").style.display = "none"
+            document.querySelector(".dos").style.display = "none"
 
             document.querySelector("desmond-player").style.display = "none"
             document.querySelector(".gb-player").style.display = "none"
@@ -33,6 +34,7 @@
             document.querySelector(".ds").style.display = "none";
             document.querySelector(".gba").style.display = "none"
             document.querySelector(".gb").style.display = "none"
+            document.querySelector(".dos").style.display = "none"
 
             document.querySelector("desmond-player").style.display = "none"
             switch (game) {
@@ -46,6 +48,9 @@
                 case "gb":
                     document.querySelector(".gb").style.display = "block"
                     break;
+                case "dos":
+                    document.querySelector(".dos").style.display = "block"
+                    break
             }
         }
     </script>
@@ -93,6 +98,14 @@
             <button onclick="loadEmulatorGB('pokemonyellow.gbc')"><img width="100px" src="gb/pokemonyellow.jpeg"></button>
             <button onclick="loadEmulatorGB('sml.gb')"><img width="100px" src="gb/sml.jpeg"></button>
             <button onclick="loadEmulatorGB('sml2.gb')"><img width="100px" src="gb/sml2.jpeg"></button>
+        </div>
+        <div class="dos">
+            <button onclick="window.location.href='dos/doom/_site/index.html'" class="custom-button">DOOM</button>
+            <button onclick="window.location.href='dos/doom2/_site/index.html'" class="custom-button">DOOM 2</button>
+            <button onclick="window.location.href='dos/monkeyisland/_site/index.html'" class="custom-button">The Legend of Monkey Island</button>
+            <button onclick="window.location.href='dos/oregontrail/_site/index.html'" class="custom-button">The Oregon Trail</button>
+            <button onclick="window.location.href='dos/simcity/_site/index.html'" class="custom-button">Sim City</button>
+            <button onclick="window.location.href='dos/Wolfenstein/_site/index.html'" class="custom-button">Wolfenstein</button>
         </div>
     </div>
     <div class="player">
