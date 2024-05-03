@@ -8,7 +8,6 @@
   color: rgba(255, 255, 255, 0.87);
   background: linear-gradient(-45deg, #ee5252, #eebd52, #bfee52, #52ee62, #52eeee, #5296ee, #9052ee, #ee52d7);
 	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,13 +16,18 @@
   -webkit-text-size-adjust: 100%;
 }
 
+.app {
+  z-index: 10;
+  position: relative; 
+}
+
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #64b7ff;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #53adf2;
 }
 
 body {
@@ -85,4 +89,11 @@ button:focus-visible {
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+.backgroundImage {
+  height: 100vh;
+  width: 10vw;
+  z-index: -1;
+  position: relative;
 }

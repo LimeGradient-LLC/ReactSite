@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom';
 import Main from './mainfunc';
@@ -40,12 +40,27 @@ class MenuBar extends React.Component {
 }
 
 function App() {
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSizeChange);
+    return () => {
+      window.removeEventListener('resize', handleWindowSizeChange);
+    }
+  }, []);
+
+  const isMobile = width <= 768;
   return (
-    <div className="App">
-      <MenuBar />
-      <Main />
-      <br />
-    </div>
+    <>
+      <div className="App">
+        <MenuBar />
+        <Main />
+        <br />
+      </div>
+    </>
   )
 }
 
