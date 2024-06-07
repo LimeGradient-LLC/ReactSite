@@ -1,2 +1,0 @@
-# Portfolio
-Written in ReactJS
