@@ -1,19 +1,16 @@
 /**
  * @name Stolas
- * @author Gibbu#1211
- * @version 2.0.0
- * @description Display your picture of choice with adjustable blur and brightness.
+ * @author limegradient
+ * @version 1.0.0
+ * @description A theme based off Stolas from Helluva Boss
  * @source https://github.com/DiscordStyles/FrostedGlass
- * @invite ZHthyCw
- * @donate https://paypal.me/IanRGibson
- * @website https://gibbu.me
- * @authorId 174868361040232448
- * @BDEditor Frosted Glass
+ * @invite 44ANAhXz7r
+ * @website https://limegradient.xyz
+ * @authorId 662833597966843907
 */
 
 @import url('https://fonts.googleapis.com/css2?family=gg+sans:wght@100;300;400;500;700&display=swap');
 @import url('https://discordstyles.github.io/FrostedGlass/dist/FrostedGlass.css');
-@import url('https://discordstyles.github.io/RadialStatus/dist/RadialStatus.css');
 @import url('https://discordstyles.github.io/Addons/windows-titlebar.css');
 
 :root {
