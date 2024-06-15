@@ -18,6 +18,7 @@
 
 body {
   background-color: #4f4e4e;
+  overflow: hidden;
 }
 
 .nav-link:hover {
