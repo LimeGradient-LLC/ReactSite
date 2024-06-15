@@ -20,22 +20,6 @@ body {
   background-color: #4f4e4e;
 }
 
-.background-ul {
-  list-style-type: none;
-}
-
-.background-ul-item:before {
-  content: " ";
-  display: inline-block;
-  background: var(--accent-color);
-  border-radius: 50%;
-  border: 1px solid var(--bs-white);
-  width: 24px;
-  height: 24px;
-  z-index: 400;
-  box-shadow: 0 0 50px 0 #76ff03;
-}
-
 .nav-link:hover {
   color: rgb(125, 154, 235) !important;
 }
@@ -53,4 +37,14 @@ body {
 
 .page-content {
   z-index: 10;
+}
+
+#headerPopup {
+  width: 75%;;
+  margin: 0 auto;
+}
+
+#headerPopup video {
+  width: 100%;
+  margin: 0 auto;
 }
