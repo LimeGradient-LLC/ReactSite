@@ -1,0 +1,77 @@
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  --card-nonbs-height: 65vh;
+  --card-nonbs-width: calc(var(--card-nonbs-height) / 1.5);
+}
+
+
+.card-nonbs {
+  background: #191c29;
+  width: var(--card-nonbs-width);
+  height: var(--card-nonbs-height);
+  padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.5em;
+  color: rgb(0, 148, 216);
+  font-family: "Poppins";
+}
+
+.card-nonbs::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate)
+    , #8bff5d, #3ce37c 43%, #00c271);
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+}
+
+.card-nonbs::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-nonbs-height) - 18);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: calc(var(--card-nonbs-height) * 1.25);
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-nonbs-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate)
+    , #8bff5d, #3ce37c 43%, #00c271);
+    opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
