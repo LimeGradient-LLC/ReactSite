@@ -9,6 +9,11 @@
   --card-nonbs-width: calc(var(--card-nonbs-height) / 1.5);
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .card-nonbs {
   background: #191c29;

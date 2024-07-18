@@ -9,9 +9,13 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.7",
     "@types/jquery": "^3.5.30",
     "sass": "^1.77.8",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "file-saver": "^2.0.5"
   }
 }
