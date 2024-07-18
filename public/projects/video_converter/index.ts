@@ -40,8 +40,10 @@ document.getElementById('fileUploadForm').onchange = function () {
     reader.readAsArrayBuffer(this.files[0]); // video file
 }
 
-function convert(fileType) {
-    audioEncoder(newRenderedBuffer.getBuffer, fileType, null, function onComplete(blob) {
+function convert() {
+    
+
+    /* audioEncoder(newRenderedBuffer.getBuffer, fileType, null, function onComplete(blob) {
         saveAs(blob, "sound.mp3");
-    })
+    }) */
 }

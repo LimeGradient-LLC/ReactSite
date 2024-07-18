@@ -11,10 +11,32 @@
 <body>
   <div class="stars"></div>
 
-  <div class="card-nonbs">
-    <h2>Hi! I'm Luna</h2>
-    <flexbreak></flexbreak>
-    <h2>I am a Developer</h2>
+  <nav class="navbar navbar-expand-sm bg-dark" id="nav-opacity" >
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1 text-white">LimeGradient</span>
+      <ul class="navbar-nav me-2  mr-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="/index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="https://github.com/LimeGradient" target="_blank">Github</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Tools</a>
+          <div class="dropdown-menu dropdown-menu-end">
+            <a class="dropdown-item" href="/projects/video_converter/index.html">Video Converter</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid d-flex justify-content-center align-items-center" id="mainCard">
+    <div class="card-nonbs">
+      <h2>Hi! I'm Luna</h2>
+      <flexbreak></flexbreak>
+      <h2>I am a Developer</h2>
+    </div>
   </div>
 
   <script src="/src/js/main.ts"></script>
