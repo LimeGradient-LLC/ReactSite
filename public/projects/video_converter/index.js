@@ -48,7 +48,9 @@ document.getElementById('fileUploadForm').onchange = function () {
 
 function convert() {
     const dropdown = document.getElementById("fileTypeSelect")
-    const value = dropdown.value
+    let value = dropdown.value
+
+    if (value == "wav") value = 0
 
     audioEncoder(newRenderedBuffer.getBuffer, value, null, function onComplete(blob) {
         saveAs(blob, newRenderedBuffer.getFileName);
