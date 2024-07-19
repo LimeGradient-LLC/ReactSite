@@ -5,6 +5,6 @@ window.onload = () => {
     for (let i = 0; i < starAmount; i++) {
         const div = document.createElement("div");
         div.classList.add("star");
-        starHolder!.appendChild(div);
+        starHolder.appendChild(div);
     }
 }
