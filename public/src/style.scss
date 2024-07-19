@@ -31,3 +31,9 @@ body {
   left: 37.5%;
   color: white;
 }
+
+@media (min-width:900px) {
+  #mainCard {
+    width: 15vw;
+  }
+}
