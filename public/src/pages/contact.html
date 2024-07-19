@@ -6,7 +6,7 @@
   <meta name="title" content="limegradient.xyz">
   <meta name="description" content="LimeGradient's personal site :3">
   <title>LimeGradient - Home</title>
-  <link rel="stylesheet" href="https://master--limegradient.netlify.app/src/style.css">
+  <link rel="stylesheet" href="/src/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script src="/src/js/flex-break.js"></script>
 </head>
@@ -39,14 +39,14 @@
     </div>
   </nav>
 
-  <div class="container-fluid d-flex justify-content-center align-items-center" id="mainCard">
-    <div class="card-nonbs">
-      <h2>Hi! I'm Luna</h2>
-      <flexbreak></flexbreak>
-      <h2 class="text-center">I am a Developer, Musician, Gamer, and I love the outdoors</h2>
-      <flexbreak></flexbreak>
-      <img src="https://cdn3.emoji.gg/emojis/transgender_pride_flag.png" width="64px" height="64px" alt="transgender_pride_flag" style="margin-right: 20px;">
-      <img src="https://cdn3.emoji.gg/emojis/3654_pansexualpride.png" width="64px" height="64px" alt="pansexualpride">
+  <div class="container-fluid w-25" id="contactForm">
+    <div class="mb-3">
+        <label for="emailAddress" class="form-label">Email address</label>
+        <input type="email" class="form-control bg-transparent text-white" id="emailAddress" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+        <label for="emailContent" class="form-label">Message</label>
+        <textarea class="form-control bg-transparent text-white" id="emailContent" rows="3"></textarea>
     </div>
   </div>
 
