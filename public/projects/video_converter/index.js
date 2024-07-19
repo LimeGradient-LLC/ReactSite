@@ -7,9 +7,13 @@ const numberOfChannels = 1;
 
 const newRenderedBuffer = {
     buffer: null,
+    fileName: null,
 
     get getBuffer() {return this.buffer},
     set setBuffer(buf) {this.buffer = buf},
+
+    get getFileName() {return this.name},
+    set setFileName(nm) {this.fileName = nm},
 }
 
 document.getElementById('fileUploadForm').onchange = function () {
@@ -38,12 +42,15 @@ document.getElementById('fileUploadForm').onchange = function () {
     };
 
     reader.readAsArrayBuffer(this.files[0]); // video file
+    console.log(this.files[0].name)
+    newRenderedBuffer.setFileName = this.files[0].name
 }
 
 function convert() {
-    
-    
-    /* audioEncoder(newRenderedBuffer.getBuffer, fileType, null, function onComplete(blob) {
-        saveAs(blob, "sound.mp3");
-    }) */
+    const dropdown = document.getElementById("fileTypeSelect")
+    const value = dropdown.value
+
+    audioEncoder(newRenderedBuffer.getBuffer, value, null, function onComplete(blob) {
+        saveAs(blob, newRenderedBuffer.getFileName);
+    })
 }
