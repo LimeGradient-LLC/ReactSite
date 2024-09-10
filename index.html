@@ -9,49 +9,12 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/glowing-button.css">
     <style>
-        a {
-            font-size: 24px;
-        }
+        
     </style>
 </head>
 
 <body>
-    
 
-    <div class="player">
-        <desmond-player id="player"></desmond-player>
-        <script src="https://cdn.jsdelivr.net/gh/Unzor/desmond/cdn/desmond.min.js"></script>
-        <script>
-            function loadEmulatorDS(name) {
-                document.querySelector(".ds").style.display = "none";
-                setTimeout(function () {
-                    document.querySelector("desmond-player").loadURL(`nds/${name}.nds`);
-                    document.querySelector("desmond-player").enableMicrophone();
-                    document.querySelector("desmond-player").shadowRoot.querySelector("#top").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 30%;height: 40%;";
-
-                    document.querySelector("desmond-player").shadowRoot.querySelector("#bottom").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 70%;height: 40%;";
-                }, 500)
-            }
-            function loadEmulatorBigDS(name) {
-                document.querySelector(".ds").style.display = "none";
-                setTimeout(function () {
-                    document.querySelector("desmond-player").loadURL(`nds/${name}.bignds`);
-                    document.querySelector("desmond-player").enableMicrophone();
-                    document.querySelector("desmond-player").shadowRoot.querySelector("#top").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 30%;height: 40%;";
-
-                    document.querySelector("desmond-player").shadowRoot.querySelector("#bottom").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 70%;height: 40%;";
-                }, 500)
-            }
-        </script>
-        <iframe class="gb-player" title="WasmBoy Iframe Embed" width="640" height="576" allowfullscreen="true"> </iframe>
-        <script>
-            function loadEmulatorGB(name) {
-                document.querySelector(".gb-player").style.display = "block"
-                document.querySelector(".gb").style.display = "none"
-                document.querySelector('.gb-player').src = `https://wasmboy.app/iframe/?rom-url=https://emulator.limegradient.xyz/gb/${name}`
-            }
-        </script>
-    </div>
 </body>
 
 </html>
