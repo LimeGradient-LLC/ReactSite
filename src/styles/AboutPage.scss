@@ -1,0 +1,17 @@
+.aboutPage {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.aboutPage .content {
+    width: inherit;
+    position: absolute;
+    margin: auto;
+    top: 12.5%;
+    left: 0;
+    z-index: 10;
+    font-family: "Poppins";
+    color: white;
+    text-align: center;
+}
