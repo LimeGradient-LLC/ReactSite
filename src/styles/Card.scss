@@ -2,7 +2,7 @@
 
 .card {
     position: absolute;
-    width: 400px;
+    width: 800px;
     height: 454px;
     background: #f00;
     display: flex;
@@ -53,10 +53,10 @@
     transition: 0.5s;
     transform: translateY(-70px);
   }
-
   
   .card .content {
     position: absolute;
+    left: 15%;
     z-index: 3;
     bottom: 10;
     display: flex;
@@ -64,6 +64,7 @@
     align-items: center;
     transform: scale(1.75);
     transition: 0.5s;
+    padding-top: 50px;
   }
   
   .content .title {
@@ -80,6 +81,11 @@
   .content .title span {
     font-weight: 300;
     font-size: 0.70em;
+  }
+
+  .title .flag-holder {
+    position: absolute;
+    left: -20%;
   }
   
   .content .sci {

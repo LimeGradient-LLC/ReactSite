@@ -15,6 +15,7 @@
     "react-bootstrap": "^2.10.5",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",
+    "react-use-lanyard": "^0.3.2",
     "scss": "^0.2.4",
     "thpace": "^2.0.2",
     "three": "^0.169.0"
