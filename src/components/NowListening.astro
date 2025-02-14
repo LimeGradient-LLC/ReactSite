@@ -1,0 +1,99 @@
+---
+
+---
+
+<script>
+    function getSpotifyData() {
+        fetch("https://api.lanyard.rest/v1/users/662833597966843907").then((res) => {
+            res.json().then((data) => {
+                const lanyard = data["data"]
+                if (lanyard.listening_to_spotify) {
+                    document.querySelector(".card").style.visibility = "visible"
+                    document.querySelector("#now-listening-to").style.visibility = "visible"
+                    const songTitle = lanyard.spotify.song
+                    let songArtist = lanyard.spotify.artist
+                    const album = lanyard.spotify.album
+                    const albumArtUrl = lanyard.spotify.album_art_url
+
+                    if (songTitle == null || songArtist == null || album == null || albumArtUrl == null) {
+                        document.querySelector(".card").style.visibility = "hidden"
+                        document.querySelector("#now-listening-to").style.visibility = "hidden"
+                        return
+                    }
+
+                    songArtist = songArtist.split(";")
+                    let artistText = ""
+
+                    document.getElementById("album-art-cover").src = albumArtUrl
+                    document.getElementById("song-title").innerText = songTitle
+                    document.getElementById("album-name").innerText = album
+
+                    songArtist.forEach(artist => {
+                        if (songArtist.at(artist) == 0 || songArtist[songArtist.at(artist)] == songArtist[songArtist.at(-1)])
+                            artistText += artist
+                        else 
+                            artistText += artist + ", "
+                    })
+
+                    document.getElementById("song-artists").innerText = artistText
+                } else {
+                    document.querySelector(".card").style.visibility = "hidden"
+                    document.querySelector("#now-listening-to").style.visibility = "hidden"
+                }
+            })
+        })
+    }
+
+    setInterval(getSpotifyData, 2000)
+</script>
+
+<h1 id="now-listening-to">Now Listening To</h1>
+<div class="card">
+    <div class="content">
+        <img id="album-art-cover">
+        <div class="song-info">
+            <h3 id="song-title">Song Title</h3>
+            <h3 id="song-artists">Song Artists</h3>
+            <h3 id="album-name">Album Name</h3>
+        </div>
+    </div>
+</div>
+
+<style>
+    #now-listening-to {
+        font-family: "Poppins";
+        position: absolute;
+        bottom: 32.5%;
+        left: calc(50% - 150px);
+    }
+
+    .card {
+        position: absolute;
+        bottom: 5%;
+        left: calc(50% - 375px);
+        width: 750px;
+        height: 250px;
+        border-radius: 30px;
+        background-color: rgba(0, 0, 0, 0);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+        font-family: 'Poppins';
+    }
+
+    .content {
+        margin-left: 20px;
+        margin-top: 30px;
+        display: flex;
+    }
+
+    .song-info {
+        margin-left: 15px;
+        margin-top: 15px;
+        display: block;
+    }
+    
+    #album-art-cover {
+        width: 200px;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+</style>

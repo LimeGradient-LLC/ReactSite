@@ -1,5 +1,5 @@
 ---
-import Discord from '../components/Discord.astro';
+import NowListening from '../components/NowListening.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -7,5 +7,37 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-    
+    <div class="content">
+        <div class="image-holder">
+            <h1>LimeGradient</h1>
+            <img src="https://cdn3.emoji.gg/emojis/transgender_pride_flag.png" width="64px" height="64px" alt="transgender_pride_flag">
+            <img src="https://cdn3.emoji.gg/emojis/3654_pansexualpride.png" width="64px" height="64px" alt="pansexualpride">
+        </div>
+        <h3>Programmer, Musician, and Outdoorsy Person</h3>
+        <div class="image-holder">
+            <img src="https://github-readme-stats.vercel.app/api?username=limegradient&count_private=true&bg_color=00000000&text_color=000000&title_color=000000&hide_border=true">
+            <img src="https://github-readme-stats-rose-eta-86.vercel.app/api/top-langs/?username=LimeGradient&bg_color=00000000&text_color=000000&title_color=000000&layout=donut&hide_border=true" width="317px">
+        </div>
+    </div>
+    <NowListening />
 </Layout>
+
+<style>
+    body {
+        overflow: hidden;
+    }
+
+    .content {
+        position: absolute;
+        left: 27.5%;
+        top: 7.5%;
+        font-family: "Poppins";
+        text-align: center;
+    }
+
+    .image-holder {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+</style>
